@@ -40,3 +40,24 @@ public class ChickenXmasController : ControllerBase {
 
 
 }
+
+
+[ApiController]
+[Route("[controller]")]
+public class BirthdayController : ControllerBase {
+    private static int _birthdayCount = 0;
+    private readonly ILogger<BirthdayController> _logger;
+
+    public BirthdayController(ILogger<BirthdayController> logger) {
+        _logger = logger; 
+    }
+
+    [HttpGet]
+    public ContentResult Get() { 
+        _birthdayCount++;
+
+        return Content($"<h1>HAPPY BIRTHDAY DAD!</h1><br /><br /><h3>{_birthdayCount} peeps have said happy birthday</h3>", "text/html");
+    }
+
+
+}

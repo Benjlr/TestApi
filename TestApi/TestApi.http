@@ -3,4 +3,7 @@
 GET {{TestApi_HostAddress}}/weatherforecast/
 Accept: application/json
 
+GET {{TestApi_HostAddress}}/chickenxmas/
+Accept: application/json
+
 ###
